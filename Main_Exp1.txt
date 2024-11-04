@@ -1,0 +1,74 @@
+Exp1 - Cyber-kill chain: Reconnaissance and Information Gathering : OSINT, Breached 
+credentials, Subdomain brute forcing, Directory scanning.
+-----------------------------------------------------------------------------------
+
+1. theHarvester
+
+>>sudo apt install theHarverster
+>>theHarvester 
+>>theHarvester -d bmsit.ac.in -b bing
+----------------------------------------------------------
+2. Sherlock
+https://github.com/sherlock-project/sherlock
+
+>>git clone https://github.com/sherlock-project/sherlock.git
+>>cd sherlock
+>>python3 -m pip install -r requirements.txt
+>>pip freeze > requirements.txt
+>>python3 -m pip install -r requirements.txt
+>>sudo apt install sherlock
+>>sherlock bmsit
+----------------------------------------------------------
+3.hunter.io
+
+>>curl "https://api.hunter.io/v2/domain-search?domain=bmsit.ac.in&api_key=1a917c97d6841af40ed0c6005ec33f3430a90f62"
+----------------------------------------------------------
+4. Have I Been Pwned
+>>https://haveibeenpwned.com/
+----------------------------------------------------------
+Subdomain Brute Forcing
+Sublist3r
+>>sudo apt install sublist3r
+>>sublist3r -d bmsit.ac.in
+----------------------------------------------------------
+5. Directory Scanning
+Gobuster
+>>https://raw.githubusercontent.com/teamstealthsec/wordlists/master/directory.txt
+>>gobuster dir -u https://bmsit.ac.in -w /usr/share/wordlists/dirb/common.txt -s '200, 204, 301, 403' -b ''
+------------------------------------------------------------
+6. dirb
+>>sudo apt install dirb
+>>dirb https://bmsit.ac.in/
+-------------------------------------------------------------
+7. snort (Optional-Not Necessary)
+on Ubuntu
+
+sudo apt install snort
+or
+sudo apt-get install snort
+
+>>sudo snort -A console -i eth0 -c /etc/snort/snort.conf -l /var/log/snort 
+>>sudo snort -T -c /etc/snort/snort.conf
+>>sudo snort -A console -c /etc/snort/snort.conf 
+>>snort -v -i eth0
+>>sudo snort -dev -l /var/log/snort -i eth0
+>>sudo snort -c /etc/snort/snort.conf -I eth0 -A console
+-----------------------------------------------------------
+8.Wireshark (Personal Preference)
+Usually is preinstalled
+if not then..
+>>sudo apt install wireshark
+
+>>Open the application
+>>Select any interface (example - eth0)
+>>Simultaneously open a browser and surf the internet
+>>Monitor the network and traffic and the hex dump file
+
+
+
+
+
+
+
+
+ 
